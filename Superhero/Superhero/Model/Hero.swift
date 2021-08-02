@@ -7,8 +7,18 @@
 
 import SwiftUI
 
-struct Hero: Identifiable {
-    var id: Int
-    var name: String
-    var age: Int
+
+struct Hero: Decodable {
+//    var id = UUID()
+    let results: [heroInfo]
+}
+
+struct heroInfo: Decodable, Identifiable {
+    let id: String
+    let name: String
+    let image: heroImage
+}
+
+struct heroImage: Decodable {
+    let url: String
 }
