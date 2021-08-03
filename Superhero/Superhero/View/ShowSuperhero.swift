@@ -21,8 +21,8 @@ extension Image {
 struct ShowSuperhero: View {
     @State var heroData = Hero(results: [heroInfo(id: "1", name: "Kam", image: heroImage(url: "background"))])
     
-    func getData() {
-        let urlString = "https://superheroapi.com/api/5750045291732827/search/batman"
+    func getData(nameOfHero: String) {
+        let urlString = "https://superheroapi.com/api/5750045291732827/search/\(nameOfHero)"
         let url = URL(string: urlString)
         
         URLSession.shared.dataTask(with: url!) { data, _, error in
@@ -40,37 +40,71 @@ struct ShowSuperhero: View {
         }.resume()
     }
     
+    @State var searchText = ""
+    @State var searching = false
     
     var body: some View {
-        VStack {
-            Button("Get data") {self.getData()}
-        }
-        List(heroData.results) {
-            hero in MyListview(eachHero: hero)
+        VStack(alignment: .leading) {
+            
+            HStack {
+                SearchBar(serchText: $searchText, searching: $searching)
+                Button("Search") {
+                    if !searchText.isEmpty {
+                        getData(nameOfHero: searchText)
+                    }
+                }.padding()
+                .foregroundColor(.gray)
+            }
 
+            List(heroData.results) {
+                hero in MyListview(eachHero: hero)
+
+            }
+            .navigationTitle(searching ? "Searching" : "Heros")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar(content: {
+                if searching {
+                    Button("Cancel") {
+                        searchText = ""
+                        withAnimation {
+                            searching = false
+                            UIApplication.shared.dismissKeyboard()
+                        }
+                    }
+                }
+            })
         }
-        .navigationTitle("Heros")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-
+extension UIApplication {
+    func dismissKeyboard() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
 
 struct MyListview: View {
     var eachHero: heroInfo
     var body: some View {
-        HStack() {
-            VStack(alignment: .leading, spacing: 2.0) {
-                Text(eachHero.id)
-                Text(eachHero.name)
-            }
-            Spacer()
-            Image(systemName: "eye.slash")
-                .data(url: URL(string: eachHero.image.url)!)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: 150)
-        }
+        
+        NavigationLink(
+            destination: HeroDetailsView(eachHero: eachHero),
+            label: {
+                HStack() {
+                    VStack(alignment: .leading, spacing: 2.0) {
+//                        Text(eachHero.id)
+                        Text(eachHero.name)
+                    }
+                    Spacer()
+                    Image(systemName: "eye.slash")
+                        .data(url: URL(string: eachHero.image.url)!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: 150)
+                }
+            })
+        
+        
 //        .background(Color.gray)
     }
 }
@@ -83,8 +117,8 @@ struct MyListview: View {
 //    Hero(id: 4, name: "Spiderman", age: 21),
 //]
 
-//struct ShowSuperhero_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ShowSuperhero(theHeros: <#Heros#>)
-//    }
-//}
+struct ShowSuperhero_Previews: PreviewProvider {
+    static var previews: some View {
+        ShowSuperhero()
+    }
+}

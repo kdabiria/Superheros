@@ -17,8 +17,13 @@ struct heroInfo: Decodable, Identifiable {
     let id: String
     let name: String
     let image: heroImage
+//    let biography: heroBiography
 }
 
 struct heroImage: Decodable {
     let url: String
 }
+//
+//struct heroBiography: Decodable {
+//    fields
+//}
