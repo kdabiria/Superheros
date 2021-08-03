@@ -22,6 +22,7 @@ struct Home: View {
     //            .navigationBarBackButtonHidden(true)
                     .navigationTitle("Home")
                         .navigationBarTitleDisplayMode(.inline)
+                    .navigationViewStyle(StackNavigationViewStyle())
             }
             .tabItem {
                 Image(systemName: "airplane.circle.fill")

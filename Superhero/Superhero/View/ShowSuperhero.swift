@@ -19,7 +19,7 @@ extension Image {
 }
 
 struct ShowSuperhero: View {
-    @State var heroData = Hero(results: [heroInfo(id: "1", name: "Kam", image: heroImage(url: "background"))])
+    @State var heroData = Hero(results: [heroInfo(id: "1", name: "Kam", image: heroImage(url: "background"), biography: heroBiography(fullName: "Kamyar Dabiri", alterEgos: "None", placeOfBirth: "USA", firstAppearance: "dc", publisher: "ME", alignment: "GOOD" ), appearance: Appearance(gender: "Male", race: "White", height: ["6'10"], weight: ["200"], eyeColor: "balck", hairColor: "Blonde"), work: heroWork(occupation: "-", base: "CA"), connections: Connection(groupAffiliation: "Group", relatives: "relatives"), powerstats: Powerstats(intelligence: "1", strength: "1", speed: "1", durability: "1", power: "1", combat: "1"))])
     
     func getData(nameOfHero: String) {
         let urlString = "https://superheroapi.com/api/5750045291732827/search/\(nameOfHero)"
@@ -27,7 +27,7 @@ struct ShowSuperhero: View {
         
         URLSession.shared.dataTask(with: url!) { data, _, error in
             DispatchQueue.main.async {
-                if let heroData = data {
+                if data != nil {
                     do {
                         let decoder = JSONDecoder()
                         let decodedData = try decoder.decode(Hero.self, from: data!)
@@ -85,28 +85,54 @@ extension UIApplication {
 
 struct MyListview: View {
     var eachHero: heroInfo
+    
+    @State var sheetShowing = false
     var body: some View {
         
-        NavigationLink(
-            destination: HeroDetailsView(eachHero: eachHero),
-            label: {
-                HStack() {
-                    VStack(alignment: .leading, spacing: 2.0) {
+//        NavigationLink(
+//            destination: HeroDetailsView(eachHero: eachHero),
+//            label: {
+//                HStack() {
+//                    VStack(alignment: .leading, spacing: 2.0) {
 //                        Text(eachHero.id)
-                        Text(eachHero.name)
-                    }
-                    Spacer()
-                    Image(systemName: "eye.slash")
-                        .data(url: URL(string: eachHero.image.url)!)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: 150)
+//                        Text(eachHero.name)
+//                    }
+//                    Spacer()
+//                    Image(systemName: "eye.slash")
+//                        .data(url: URL(string: eachHero.image.url)!)
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(maxWidth: 150)
+//                }
+//            })
+        
+        
+        Button(action: {
+            self.sheetShowing.toggle()
+
+        } , label: {
+            HStack() {
+                VStack(alignment: .leading, spacing: 2.0) {
+                    Text(eachHero.id) // need to remove this
+                    Text(eachHero.name)
+                    
                 }
-            })
+                Spacer()
+                Image(systemName: "eye.slash")
+                    .data(url: URL(string: eachHero.image.url)!)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 150)
+            }
+        })
+        .sheet(isPresented: $sheetShowing, content: {
+            HeroDetailsView(eachHero: eachHero)
+        })
         
         
 //        .background(Color.gray)
     }
+
 }
 
 //need to change this late to get data from API
