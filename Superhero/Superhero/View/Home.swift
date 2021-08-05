@@ -14,19 +14,27 @@ struct Home: View {
 
         TabView {
             NavigationView {
-                NavigationLink(
-                    destination: ShowSuperhero(),
-                    label: {
-                        Text("Find Superhero")
-                    })
-    //            .navigationBarBackButtonHidden(true)
-                    .navigationTitle("Home")
-                        .navigationBarTitleDisplayMode(.inline)
-                    .navigationViewStyle(StackNavigationViewStyle())
+                ShowSuperhero()
+//                NavigationLink(
+//                    destination: ShowSuperhero(),
+//                    label: {
+//                        Text("Find Superhero")
+//                    })
+//    //            .navigationBarBackButtonHidden(true)
+//                    .navigationTitle("Home")
+//                        .navigationBarTitleDisplayMode(.inline)
+//                    .navigationViewStyle(StackNavigationViewStyle())
             }
             .tabItem {
                 Image(systemName: "airplane.circle.fill")
                 Text("Home")
+            }
+            NavigationView {
+                Quiz()
+            }
+            .tabItem {
+                Image(systemName: "pencil.circle.fill")
+                Text("Quiz")
             }
         }
         
