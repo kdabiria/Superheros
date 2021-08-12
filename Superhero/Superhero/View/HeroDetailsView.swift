@@ -10,6 +10,18 @@ import SwiftUI
 struct HeroDetailsView: View {
     
     var eachHero: heroInfo
+//    var heroInfos: [heroInfo]
+    var body: some View {
+//        List(heroInfos) {
+//            hero in heroList(eachHero: hero)
+//        }
+        heroList(eachHero: eachHero)
+    }
+}
+
+
+struct heroList: View {
+    var eachHero: heroInfo
     var body: some View {
         ScrollView {
             VStack {
@@ -106,9 +118,17 @@ struct HeroDetailsView: View {
                     Text("Gender: \(eachHero.appearance.gender)")
                         .font(.title3)
                         .multilineTextAlignment(/*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    Text("Race: \(eachHero.appearance.race)")
-                        .font(.title3)
-                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    if eachHero.appearance.race != "null" {
+                        Text("Race: \(eachHero.appearance.race)")
+                            .font(.title3)
+                            .multilineTextAlignment(.center)
+                        
+                    }
+                    else {
+                        Text("Race: -")
+                            .font(.title3)
+                            .multilineTextAlignment(.center)
+                    }
 //                    Text("Height: \(eachHero.appearance.height.first)")
 //                        .font(.title3)
 //                    Text("Weight: \(eachHero.appearance.weight.first)")
@@ -150,14 +170,16 @@ struct HeroDetailsView: View {
                 }
                 .padding(.horizontal)
             }
+
         }
+
     }
 }
 
 var dumbHero = [heroInfo(id: "1", name: "Kam", image: heroImage(url: "background"), biography: heroBiography(fullName: "Kamyar Dabiri", alterEgos: "None", placeOfBirth: "USA", firstAppearance: "dc", publisher: "ME", alignment: "GOOD" ), appearance: Appearance(gender: "Male", race: "White", height: ["6'10"], weight: ["200"], eyeColor: "balck", hairColor: "Blonde"), work: heroWork(occupation: "-", base: "CA"), connections: Connection(groupAffiliation: "Group", relatives: "relatives"), powerstats: Powerstats(intelligence: "1", strength: "1", speed: "1", durability: "1", power: "1", combat: "1"))]
 
-struct HeroDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        HeroDetailsView(eachHero: dumbHero.first!)
-    }
-}
+//struct HeroDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HeroDetailsView(eachHero: dumbHero.first!)
+//    }
+//}

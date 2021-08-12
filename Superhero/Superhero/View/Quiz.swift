@@ -9,7 +9,12 @@ import SwiftUI
 
 struct Quiz: View {
     @State var show = false
+    @State var show2 = false
+    @State var quizInfo = ""
+    @State var level = ""
     
+    @State var holder = QAContainer(QAholder: powerQA)
+
     var body: some View {
         VStack {
             Text("Find which \nSuperhro you are")
@@ -24,59 +29,129 @@ struct Quiz: View {
             //level view
             
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 2), spacing: 35 ,content: {
-                // four level
-                ForEach(1...4, id: \.self) { index in
+                
+                VStack(spacing: 15) {
+                    Image("lvl1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 150)
                     
-                    VStack(spacing: 15) {
-                        Image("lvl\(index)")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 150)
-                        
-                        switch index {
-                            case 1:
-                                Text("Power Quiz")
-                                    .font(.title2)
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(.black)
-                            case 2:
-                                Text("Speed Quiz")
-                                    .font(.title2)
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(.black)
-                            case 3:
-                                Text("Intelligence Quiz")
-                                    .font(.title2)
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(.black)
-                                    .minimumScaleFactor(0.04)
-                                    
-                            case 4:
-                                Text("Combat Quiz")
-                                    .font(.title2)
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(.black)
-                                
-                            default:
-                                Text("NO Quiz")
-                                    .font(.title2)
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(.black)
-                        }
-                    
-                        Text("Level \(index)")
-                            .foregroundColor(.black)
-                    }
-                    .padding()
-                    .frame(height: 250)
-                    .background(Color.white)
-                    .cornerRadius(15)
-                    // opening QA
-                    .onTapGesture {
-                        show.toggle()
-                    }
-                    
+        
+                    Text("Power Quiz")
+                        .font(.title2)
+                        .fontWeight(.heavy)
+                        .foregroundColor(.black)
+                    Text("Level 1")
+                        .foregroundColor(.black)
                 }
+                .padding()
+                .frame(height: 250)
+                .background(Color.white)
+                .cornerRadius(15)
+                // opening QA
+                .onTapGesture {
+                    show.toggle()
+                    level = "1"
+                }
+                .sheet(isPresented: $show, content: {
+                    QA(lvl: $level, data: holder)
+                })
+
+                VStack(spacing: 15) {
+                    Image("lvl2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 150)
+                    
+                
+                    Text("Speed Quiz")
+                        .font(.title2)
+                        .fontWeight(.heavy)
+                        .foregroundColor(.black)
+                
+                    Text("Level 2")
+                        .foregroundColor(.black)
+                }
+//                    .accessibilityElement(children: .contain)
+//                    .accessibilityIdentifier(String(index))
+                .padding()
+                .frame(height: 250)
+                .background(Color.white)
+                .cornerRadius(15)
+                // opening QA
+                .onTapGesture {
+                    show.toggle()
+                    level = "2"
+                    holder.setQAholder(newDict: speedQA)
+                }
+                .sheet(isPresented: $show, content: {
+                    QA(lvl: $level,data: holder)
+                })
+                
+                VStack(spacing: 15) {
+                    Image("lvl3")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 150)
+                    
+            
+
+                    Text("Intelligence Quiz")
+                        .font(.title2)
+                        .fontWeight(.heavy)
+                        .foregroundColor(.black)
+                        .minimumScaleFactor(0.04)
+                                
+                
+                    Text("Level 3")
+                        .foregroundColor(.black)
+                }
+//                    .accessibilityElement(children: .contain)
+//                    .accessibilityIdentifier(String(index))
+                .padding()
+                .frame(height: 250)
+                .background(Color.white)
+                .cornerRadius(15)
+                // opening QA
+                .onTapGesture {
+                    show.toggle()
+                    level = "3"
+                    holder.setQAholder(newDict: intelligenceQA)
+                }
+                .sheet(isPresented: $show, content: {
+                    QA(lvl: $level,data: holder)
+                })
+                
+                VStack(spacing: 15) {
+                    Image("lvl4")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 150)
+                    
+
+                    Text("Combat Quiz")
+                        .font(.title2)
+                        .fontWeight(.heavy)
+                        .foregroundColor(.black)
+                            
+                    Text("Level 4")
+                        .foregroundColor(.black)
+                }
+//                    .accessibilityElement(children: .contain)
+//                    .accessibilityIdentifier(String(index))
+                .padding()
+                .frame(height: 250)
+                .background(Color.white)
+                .cornerRadius(15)
+                // opening QA
+                .onTapGesture {
+                    show.toggle()
+                    level = "4"
+                    holder.setQAholder(newDict: combatQA)
+                }
+                .sheet(isPresented: $show, content: {
+                    QA(lvl: $level,data: holder)
+                })
             })
             .padding()
             
@@ -87,9 +162,9 @@ struct Quiz: View {
         .background(Color.black.opacity(0.05).ignoresSafeArea())
         .navigationTitle("Quiz")
         .navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $show, content: {
-            QA()
-        })
+//        .sheet(isPresented: $show, content: {
+//            QA()
+//        })
     }
 }
 
