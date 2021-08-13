@@ -17,7 +17,7 @@ struct QA: View {
             Text("Quiz")
                 .font(.title2)
                 .fontWeight(.heavy)
-                .foregroundColor(.black)
+//                .foregroundColor(.black)
                 .padding(.top, 25)
             ZStack {
                 QuestionVIew(question: $data)

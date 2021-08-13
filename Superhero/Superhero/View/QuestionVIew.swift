@@ -27,14 +27,14 @@ struct QuestionVIew: View {
                 Text(question.getQAholder(key: "q\(index)")["q"]!)
                     .font(.title2)
                     .fontWeight(.heavy)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("text"))
                     .padding(.top, 25)
                 
                 Spacer()
                 
                 Button(action: {selected = question.getQAholder(key: "q\(index)")["a"]!}, label: {
                     Text(question.getQAholder(key: "q\(index)")["a"]!)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("text"))
                         .padding()
                         .padding(.vertical)
                         .frame(maxWidth: .infinity)
@@ -46,7 +46,7 @@ struct QuestionVIew: View {
                 
                 Button(action: {selected = question.getQAholder(key: "q\(index)")["b"]!}, label: {
                     Text(question.getQAholder(key: "q\(index)")["b"]!)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("text"))
                         .padding()
                         .padding(.vertical)
                         .frame(maxWidth: .infinity)
@@ -58,7 +58,7 @@ struct QuestionVIew: View {
                 
                 Button(action: {selected = question.getQAholder(key: "q\(index)")["c"]!}, label: {
                     Text(question.getQAholder(key: "q\(index)")["c"]!)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("text"))
                         .padding()
                         .padding(.vertical)
                         .frame(maxWidth: .infinity)
@@ -123,10 +123,10 @@ struct QuestionVIew: View {
                 
             }
             .padding()
-            .background(Color.white)
+//            .background(Color("SearchBar"))
             .cornerRadius(25)
-            .shadow(color: Color.black.opacity(0.05), radius: 5, x: 5, y: 5)
-            .shadow(color: Color.black.opacity(0.05), radius: 5, x: -5, y: -5)
+//            .shadow(color: Color.black.opacity(0.05), radius: 5, x: 5, y: 5)
+//            .shadow(color: Color.black.opacity(0.05), radius: 5, x: -5, y: -5)
         }
 
     }

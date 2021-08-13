@@ -46,12 +46,13 @@ struct Quiz: View {
                 }
                 .padding()
                 .frame(height: 250)
-                .background(Color.white)
+                .background(Color("SearchBar"))
                 .cornerRadius(15)
                 // opening QA
                 .onTapGesture {
                     show.toggle()
                     level = "1"
+                    holder.setQAholder(newDict: powerQA)
                 }
                 .sheet(isPresented: $show, content: {
                     QA(lvl: $level, data: holder)
@@ -76,7 +77,7 @@ struct Quiz: View {
 //                    .accessibilityIdentifier(String(index))
                 .padding()
                 .frame(height: 250)
-                .background(Color.white)
+                .background(Color("SearchBar"))
                 .cornerRadius(15)
                 // opening QA
                 .onTapGesture {
@@ -110,7 +111,7 @@ struct Quiz: View {
 //                    .accessibilityIdentifier(String(index))
                 .padding()
                 .frame(height: 250)
-                .background(Color.white)
+                .background(Color("SearchBar"))
                 .cornerRadius(15)
                 // opening QA
                 .onTapGesture {
@@ -141,7 +142,7 @@ struct Quiz: View {
 //                    .accessibilityIdentifier(String(index))
                 .padding()
                 .frame(height: 250)
-                .background(Color.white)
+                .background(Color("SearchBar"))
                 .cornerRadius(15)
                 // opening QA
                 .onTapGesture {
