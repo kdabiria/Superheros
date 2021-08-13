@@ -76,6 +76,9 @@ struct QuestionVIew: View {
         if showHero {
             VStack(spacing: 20) {
                 Text("You are \(heroData.name)")
+                    .font(.title2)
+                Text("Power: \(heroData.powerstats.power)")
+                    .font(.title2)
                 Spacer()
                 Image(systemName: "eye.slash")
                     .data(url: URL(string: heroData.image.url)!)
