@@ -191,10 +191,6 @@ struct heroList: View {
                             .font(.title3)
                             .lineLimit(nil)
                             .multilineTextAlignment(.center)
-                        Text("First Appearance: \(eachHero.biography.firstAppearance)")
-                            .font(.title3)
-                            .lineLimit(nil)
-                            .multilineTextAlignment(.center)
                     }
                     .frame(maxWidth: 450, maxHeight: .infinity)
                     .padding(.bottom)
