@@ -53,12 +53,10 @@ struct QuestionVIew: View {
                 continue
             }
             else if randomHeroArray.isEmpty {
-                print("here")
                 highestPower.append(heroData.powerstats.power)
                 randomHeroArray.append(randomHero)
             }
             else {
-                print("arry is \(randomHeroArray.isEmpty)")
                 if Int(randomHeroArray[0]) ?? 0 < Int(heroData.powerstats.power) ?? 0{
                     highestPower[0] = heroData.powerstats.power
                     randomHeroArray[0] = randomHero
@@ -77,9 +75,17 @@ struct QuestionVIew: View {
             VStack(spacing: 20) {
                 Text("You are \(heroData.name)")
                     .font(.title2)
-                Text("Power: \(heroData.powerstats.power)")
-                    .font(.title2)
+                if heroData.powerstats.power != "null" {
+                    Text("Power: \(heroData.powerstats.power)")
+                        .font(.title2)
+                }
+                else {
+                    Text("Power: -")
+                        .font(.title2)
+                }
+                
                 Spacer()
+                
                 Image(systemName: "eye.slash")
                     .data(url: URL(string: heroData.image.url)!)
                     .resizable()
