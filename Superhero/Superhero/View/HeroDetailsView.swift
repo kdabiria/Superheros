@@ -111,12 +111,12 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.white)
+                            .fill(Color("SearchBar"))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
                     VStack() {
-                        Text("Biography:")
+                        Text("Biography")
                             .font(.title)
                             .padding()
                         Text("Full Name: \(eachHero.biography.fullName)")
@@ -161,12 +161,12 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.white)
+                            .fill(Color("SearchBar"))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
                     VStack {
-                        Text("Occupation:")
+                        Text("Occupation")
                             .font(.title)
                             .padding()
                         Text("\(eachHero.work.occupation)")
@@ -179,12 +179,12 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.white)
+                            .fill(Color("SearchBar"))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
                     VStack {
-                        Text("Work Base:")
+                        Text("Work Base")
                             .font(.title)
                             .padding()
                         Text("\(eachHero.work.base)")
@@ -197,13 +197,15 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.white)
+                            .fill(Color("SearchBar"))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
                     VStack {
-                        Text("First Appearance:")
+                        Text("First Appearance")
                             .font(.title)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.center)
                             .padding()
                         Text("\(eachHero.biography.firstAppearance)")
                             .font(.title3)
@@ -215,13 +217,15 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.white)
+                            .fill(Color("SearchBar"))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
                     VStack {
-                        Text("Group Affiliation:")
+                        Text("Group Affiliation")
                             .font(.title)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.center)
                             .padding()
  
                         Text("\(eachHero.connections.groupAffiliation)")
@@ -235,12 +239,12 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.white)
-                            .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+                            .fill(Color("SearchBar"))
+                            .shadow(color: .black, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
                     VStack {
-                        Text("Relatives:")
+                        Text("Relatives")
                             .font(.title)
                             .padding()
                         
@@ -254,12 +258,12 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.white)
+                            .fill(Color("SearchBar"))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
                     VStack {
-                        Text("Other:")
+                        Text("Other")
                             .font(.title)
                             .padding()
                         Text("Publisher: \(eachHero.biography.publisher)")
@@ -276,7 +280,7 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.white)
+                            .fill(Color("SearchBar"))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
     
