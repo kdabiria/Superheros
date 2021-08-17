@@ -20,7 +20,7 @@ struct QA: View {
 //                .foregroundColor(.black)
                 .padding(.top, 25)
             ZStack {
-                QuestionVIew(question: $data)
+                QuestionVIew(question: $data, lvl: $lvl)
 
             }
             .padding()
