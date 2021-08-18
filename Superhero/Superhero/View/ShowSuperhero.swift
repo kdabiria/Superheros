@@ -26,22 +26,22 @@ struct ShowSuperhero: View {
     var body: some View {
         VStack(alignment: .leading) {
             
-//            HStack {
-            SearchBar(serchText: $searchText, searching: $searching)
-            if searching {
-                Button("Cancel") {
-                    searchText = ""
-                    withAnimation {
-                        searching = false
-                        UIApplication.shared.dismissKeyboard()
-                    }
-                }.padding(.trailing)
-                .padding(.leading, 0)
-                .foregroundColor(.gray)
-                .transition(.move(edge: .trailing))
-                .animation(.spring())
+            HStack {
+                SearchBar(serchText: $searchText, searching: $searching)
+                if searching {
+                    Button("Cancel") {
+                        searchText = ""
+                        withAnimation {
+                            searching = false
+                            UIApplication.shared.dismissKeyboard()
+                        }
+                    }.padding(.trailing)
+                    .padding(.leading, 0)
+                    .foregroundColor(.gray)
+                    .transition(.move(edge: .trailing))
+                    .animation(.spring())
+                }
             }
-//            }
 
             List {
                 ForEach(allHero.filter({ (theHero: String) -> Bool in
