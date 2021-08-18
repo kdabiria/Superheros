@@ -27,6 +27,14 @@ struct Home: View {
                 Image(systemName: "pencil.circle.fill")
                 Text("Quiz")
             }
+            
+            NavigationView {
+                Zodiac()
+            }
+            .tabItem {
+                Image(systemName: "questionmark.circle.fill")
+                Text("Zodiac")
+            }
         }
         
         
