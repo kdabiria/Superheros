@@ -110,8 +110,10 @@ struct QuestionVIew: View {
                             .cornerRadius(25)
 
                     })
+                    .padding(.bottom, 20)
                     
                 }
+                .padding()
             }
             else {
                 VStack {
@@ -202,6 +204,11 @@ struct QuestionVIew: View {
             .padding()
 //            .background(Color("SearchBar"))
             .cornerRadius(25)
+            .background(
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(Color("SearchBar"))
+                    .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+            )
 //            .shadow(color: Color.black.opacity(0.05), radius: 5, x: 5, y: 5)
 //            .shadow(color: Color.black.opacity(0.05), radius: 5, x: -5, y: -5)
         }
