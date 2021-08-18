@@ -29,7 +29,7 @@ struct Home: View {
             }
             
             NavigationView {
-                Zodiac()
+                Zodiac(data: zodiacHero[0])
             }
             .tabItem {
                 Image(systemName: "questionmark.circle.fill")

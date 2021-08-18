@@ -9,8 +9,10 @@ import SwiftUI
 
 struct Zodiac: View {
     @State var tap = false
+//    @State var idx = 0
+    @State var data: zodiacHeros
+//    var counter = 1
     
-    var counter = 1
     var body: some View {
         
         ZStack() {
@@ -31,31 +33,287 @@ struct Zodiac: View {
                 VStack(spacing: 20) {
                     
                     HStack(spacing: 30) {
-                        ForEach(zodicImg) { img in
-                            CircleButton(item: img, tap: $tap)
-                        }
+                        
+                        Button(action: {
+                            tap.toggle()
+                            data = zodiacHero[0]
+                        }, label: {
+                            VStack {
+                                Image(zodicImg[0].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Text(zodicImg[0].name)
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
+                        })
+                        .sheet(isPresented: $tap, content: {
+                            ZodiacInfo(info: $data)
+                        })
+                       
+                        Button(action: {
+                            tap.toggle()
+                            data = zodiacHero[1]
+                        }, label: {
+                            VStack {
+                                Image(zodicImg[1].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Text(zodicImg[1].name)
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
+                        })
+                        .sheet(isPresented: $tap, content: {
+                            ZodiacInfo(info: $data)
+                        })
+                        
+                        Button(action: {
+                            tap.toggle()
+                            data = zodiacHero[2]
+                        }, label: {
+                            VStack {
+                                Image(zodicImg[2].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Text(zodicImg[2].name)
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
+                        })
+                        .sheet(isPresented: $tap, content: {
+                            ZodiacInfo(info: $data)
+                        })
+                        
+//                        ForEach(zodicImg) { img in
+//                            CircleButton(item: img, tap: $tap, index: $idx)
+//                        }
+                    }
+
+                    HStack(spacing: 30) {
+                        
+                        Button(action: {
+                            tap.toggle()
+                            data = zodiacHero[3]
+                        }, label: {
+                            VStack {
+                                Image(zodicImg2[0].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Text(zodicImg2[0].name)
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
+                        })
+                        .sheet(isPresented: $tap, content: {
+                            ZodiacInfo(info: $data)
+                        })
+                       
+                        Button(action: {
+                            tap.toggle()
+                            data = zodiacHero[4]
+                        }, label: {
+                            VStack {
+                                Image(zodicImg2[1].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Text(zodicImg2[1].name)
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
+                        })
+                        .sheet(isPresented: $tap, content: {
+                            ZodiacInfo(info: $data)
+                        })
+                        
+                        Button(action: {
+                            tap.toggle()
+                            data = zodiacHero[5]
+                        }, label: {
+                            VStack {
+                                Image(zodicImg2[2].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Text(zodicImg2[2].name)
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
+                        })
+                        .sheet(isPresented: $tap, content: {
+                            ZodiacInfo(info: $data)
+                        })
+                        
+//                        ForEach(zodicImg) { img in
+//                            CircleButton(item: img, tap: $tap, index: $idx)
+//                        }
                     }
                     
                     HStack(spacing: 30) {
-                        ForEach(zodicImg2) { img in
-                            CircleButton(item: img, tap: $tap)
-                        }
+                        
+                        Button(action: {
+                            tap.toggle()
+                            data = zodiacHero[6]
+                        }, label: {
+                            VStack {
+                                Image(zodicImg3[0].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Text(zodicImg3[0].name)
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
+                        })
+                        .sheet(isPresented: $tap, content: {
+                            ZodiacInfo(info: $data)
+                        })
+                       
+                        Button(action: {
+                            tap.toggle()
+                            data = zodiacHero[7]
+                        }, label: {
+                            VStack {
+                                Image(zodicImg3[1].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Text(zodicImg3[1].name)
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
+                        })
+                        .sheet(isPresented: $tap, content: {
+                            ZodiacInfo(info: $data)
+                        })
+                        
+                        Button(action: {
+                            tap.toggle()
+                            data = zodiacHero[8]
+                        }, label: {
+                            VStack {
+                                Image(zodicImg3[2].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Text(zodicImg3[2].name)
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
+                        })
+                        .sheet(isPresented: $tap, content: {
+                            ZodiacInfo(info: $data)
+                        })
+                        
+//                        ForEach(zodicImg) { img in
+//                            CircleButton(item: img, tap: $tap, index: $idx)
+//                        }
                     }
                     
                     HStack(spacing: 30) {
-                        ForEach(zodicImg3) { img in
-                            CircleButton(item: img, tap: $tap)
-                        }
+                        
+                        Button(action: {
+                            tap.toggle()
+                            data = zodiacHero[9]
+                        }, label: {
+                            VStack {
+                                Image(zodicImg4[0].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Text(zodicImg4[0].name)
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
+                        })
+                        .sheet(isPresented: $tap, content: {
+                            ZodiacInfo(info: $data)
+                        })
+                       
+                        Button(action: {
+                            tap.toggle()
+                            data = zodiacHero[10]
+                        }, label: {
+                            VStack {
+                                Image(zodicImg4[1].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Text(zodicImg4[1].name)
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
+                        })
+                        .sheet(isPresented: $tap, content: {
+                            ZodiacInfo(info: $data)
+                        })
+                        
+                        Button(action: {
+                            tap.toggle()
+                            data = zodiacHero[11]
+                        }, label: {
+                            VStack {
+                                Image(zodicImg4[2].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Text(zodicImg4[2].name)
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
+                        })
+                        .sheet(isPresented: $tap, content: {
+                            ZodiacInfo(info: $data)
+                        })
+                        
+//                        ForEach(zodicImg) { img in
+//                            CircleButton(item: img, tap: $tap, index: $idx)
+//                        }
                     }
                     
-                    HStack(spacing: 30) {
-                        ForEach(zodicImg4) { img in
-                            CircleButton(item: img, tap: $tap)
-                        }
-                    }
                 }
                 .padding()
-                
                 Spacer()
                 Spacer()
             }
@@ -66,33 +324,6 @@ struct Zodiac: View {
 
 struct Zodiac_Previews: PreviewProvider {
     static var previews: some View {
-        Zodiac()
-    }
-}
-
-struct CircleButton: View {
-    var item: zodiacNames
-    @Binding var tap: Bool
-    var body: some View {
-        
-        Button(action: {
-            tap.toggle()
-        }, label: {
-            VStack {
-                Image(item.image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .background(Color.black.opacity(0.5))
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                Text(item.name)
-                    .font(.system(.headline, design: .serif))
-                    .foregroundColor(.white)
-            }
-            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            
-        })
-        .sheet(isPresented: $tap, content: {
-            Text("nothing yet")
-        })
+        Zodiac(data: zodiacHero[0])
     }
 }
