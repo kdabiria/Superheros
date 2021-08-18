@@ -28,7 +28,6 @@ struct Zodiac: View {
                     .padding(.vertical,50.0)
                     .padding(.horizontal)
                 
-                Spacer()
                 
                 VStack(spacing: 20) {
                     
