@@ -15,8 +15,18 @@
 		9416FDA126B34B070023F04E /* SuperheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9416FDA026B34B070023F04E /* SuperheroUITests.swift */; };
 		9416FDAF26B36C210023F04E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9416FDAE26B36C210023F04E /* Home.swift */; };
 		9416FDB126B371470023F04E /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9416FDB026B371470023F04E /* Register.swift */; };
+		942ED7C626CC12C00075865B /* Zodiac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942ED7C526CC12C00075865B /* Zodiac.swift */; };
+		9439B7B526BDB31700040CDA /* QAPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9439B7B426BDB31700040CDA /* QAPower.swift */; };
+		9439B7B726BDC2DA00040CDA /* QuestionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9439B7B626BDC2DA00040CDA /* QuestionVIew.swift */; };
+		944B95CA26CC824C005BDBD2 /* ZodiacData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B95C926CC824C005BDBD2 /* ZodiacData.swift */; };
+		9461362026C2D12900B5F196 /* QAContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9461361F26C2D12900B5F196 /* QAContainer.swift */; };
+		94CE7FB126CD6B7000A05C6A /* ZodiacInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE7FB026CD6B7000A05C6A /* ZodiacInfo.swift */; };
 		94FA719D26B461FE00860C1E /* ShowSuperhero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA719C26B461FE00860C1E /* ShowSuperhero.swift */; };
 		94FA719F26B4811C00860C1E /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA719E26B4811C00860C1E /* Hero.swift */; };
+		94FA71A326B8B70D00860C1E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA71A226B8B70D00860C1E /* SearchBar.swift */; };
+		94FA71A526B8C9DD00860C1E /* HeroDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA71A426B8C9DD00860C1E /* HeroDetailsView.swift */; };
+		94FA71AB26BAFB0800860C1E /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA71AA26BAFB0800860C1E /* Quiz.swift */; };
+		94FA71AD26BB313300860C1E /* QA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA71AC26BB313300860C1E /* QA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +61,18 @@
 		9416FDA226B34B070023F04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9416FDAE26B36C210023F04E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		9416FDB026B371470023F04E /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		942ED7C526CC12C00075865B /* Zodiac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zodiac.swift; sourceTree = "<group>"; };
+		9439B7B426BDB31700040CDA /* QAPower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAPower.swift; sourceTree = "<group>"; };
+		9439B7B626BDC2DA00040CDA /* QuestionVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVIew.swift; sourceTree = "<group>"; };
+		944B95C926CC824C005BDBD2 /* ZodiacData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacData.swift; sourceTree = "<group>"; };
+		9461361F26C2D12900B5F196 /* QAContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAContainer.swift; sourceTree = "<group>"; };
+		94CE7FB026CD6B7000A05C6A /* ZodiacInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacInfo.swift; sourceTree = "<group>"; };
 		94FA719C26B461FE00860C1E /* ShowSuperhero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSuperhero.swift; sourceTree = "<group>"; };
 		94FA719E26B4811C00860C1E /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		94FA71A226B8B70D00860C1E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		94FA71A426B8C9DD00860C1E /* HeroDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsView.swift; sourceTree = "<group>"; };
+		94FA71AA26BAFB0800860C1E /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		94FA71AC26BB313300860C1E /* QA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +166,13 @@
 				9416FDB026B371470023F04E /* Register.swift */,
 				9416FDAE26B36C210023F04E /* Home.swift */,
 				94FA719C26B461FE00860C1E /* ShowSuperhero.swift */,
+				94FA71A226B8B70D00860C1E /* SearchBar.swift */,
+				94FA71A426B8C9DD00860C1E /* HeroDetailsView.swift */,
+				94FA71AA26BAFB0800860C1E /* Quiz.swift */,
+				94FA71AC26BB313300860C1E /* QA.swift */,
+				9439B7B626BDC2DA00040CDA /* QuestionVIew.swift */,
+				942ED7C526CC12C00075865B /* Zodiac.swift */,
+				94CE7FB026CD6B7000A05C6A /* ZodiacInfo.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,6 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				94FA719E26B4811C00860C1E /* Hero.swift */,
+				9461361F26C2D12900B5F196 /* QAContainer.swift */,
+				9439B7B426BDB31700040CDA /* QAPower.swift */,
+				944B95C926CC824C005BDBD2 /* ZodiacData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,11 +318,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				9416FD8626B34B050023F04E /* ContentView.swift in Sources */,
+				94CE7FB126CD6B7000A05C6A /* ZodiacInfo.swift in Sources */,
 				9416FDAF26B36C210023F04E /* Home.swift in Sources */,
 				94FA719D26B461FE00860C1E /* ShowSuperhero.swift in Sources */,
+				94FA71AD26BB313300860C1E /* QA.swift in Sources */,
+				944B95CA26CC824C005BDBD2 /* ZodiacData.swift in Sources */,
 				9416FDB126B371470023F04E /* Register.swift in Sources */,
+				94FA71A326B8B70D00860C1E /* SearchBar.swift in Sources */,
+				94FA71AB26BAFB0800860C1E /* Quiz.swift in Sources */,
+				9439B7B526BDB31700040CDA /* QAPower.swift in Sources */,
+				9439B7B726BDC2DA00040CDA /* QuestionVIew.swift in Sources */,
 				9416FD8426B34B050023F04E /* SuperheroApp.swift in Sources */,
+				9461362026C2D12900B5F196 /* QAContainer.swift in Sources */,
 				94FA719F26B4811C00860C1E /* Hero.swift in Sources */,
+				94FA71A526B8C9DD00860C1E /* HeroDetailsView.swift in Sources */,
+				942ED7C626CC12C00075865B /* Zodiac.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +489,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Superhero/Preview Content\"";
 				DEVELOPMENT_TEAM = 2CWU9G6H5B;
@@ -461,6 +503,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kamyardabiri.Superhero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -471,6 +514,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Superhero/Preview Content\"";
 				DEVELOPMENT_TEAM = 2CWU9G6H5B;
@@ -481,8 +526,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = kamyardabiri.Superhero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
