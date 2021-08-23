@@ -10,18 +10,48 @@ import SwiftUI
 struct HeroDetailsView: View {
     
     var eachHero: heroInfo
-//    var heroInfos: [heroInfo]
+    @Binding var isLoading: Bool
+    
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
-//        List(heroInfos) {
-//            hero in heroList(eachHero: hero)
-//        }
-        heroList(eachHero: eachHero)
+        
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea(.all)
+            
+            VStack {
+                if isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                        .scaleEffect(3)
+                }
+                else {
+                    Button(action: {
+                           self.presentationMode.wrappedValue.dismiss()
+                       }) {
+                           HStack {
+                               Image(systemName: "chevron.backward")
+                                .foregroundColor(.white)
+                                .padding(.leading)
+                            Spacer()
+                           }
+                        }
+                    heroList(eachHero: eachHero, isLoading: $isLoading)
+                }
+                    
+            }
+           
+        }
+        .navigationBarHidden(true)
     }
+    
+    
 }
 
 
 struct heroList: View {
     var eachHero: heroInfo
+    @Binding var isLoading: Bool
     var body: some View {
         VStack {
             Group {
@@ -107,11 +137,12 @@ struct heroList: View {
 //                        .padding()
                     }
                     .frame(maxWidth: 450, maxHeight: .infinity)
+//                        .frame(minWidth:250)
                     .padding()
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color("SearchBar"))
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
@@ -121,6 +152,7 @@ struct heroList: View {
                             .padding()
                         Text("Full Name: \(eachHero.biography.fullName)")
                             .font(.title3)
+                            .lineLimit(nil)
                             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
 
                         Text("Place of Birth: \(eachHero.biography.placeOfBirth)")
@@ -134,6 +166,7 @@ struct heroList: View {
                             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         Text("Gender: \(eachHero.appearance.gender)")
                             .font(.title3)
+                            .lineLimit(nil)
                             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         if eachHero.appearance.race != "null" {
                             Text("Race: \(eachHero.appearance.race)")
@@ -150,10 +183,12 @@ struct heroList: View {
 
                         Text("Eye Color: \(eachHero.appearance.eyeColor)")
                             .font(.title3)
+                            .lineLimit(nil)
                             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         
                         Text("Hair Color: \(eachHero.appearance.hairColor)")
                             .font(.title3)
+                            .lineLimit(nil)
                             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     }
                     .frame(maxWidth: 450, maxHeight: .infinity)
@@ -161,7 +196,7 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color("SearchBar"))
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
@@ -179,7 +214,7 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color("SearchBar"))
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
@@ -197,7 +232,7 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color("SearchBar"))
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
@@ -217,7 +252,7 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color("SearchBar"))
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
@@ -239,7 +274,7 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color("SearchBar"))
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                             .shadow(color: .black, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
@@ -258,7 +293,7 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color("SearchBar"))
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
                     
@@ -280,11 +315,12 @@ struct heroList: View {
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color("SearchBar"))
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     )
     
                 }
+                .padding(.leading,50)
                 .padding()
             }
         }
@@ -293,8 +329,8 @@ struct heroList: View {
 
 var dumbHero = [heroInfo(id: "1", name: "Kam", image: heroImage(url: "background"), biography: heroBiography(fullName: "Kamyar Dabiri", alterEgos: "None", placeOfBirth: "USA", firstAppearance: "dc", publisher: "ME", alignment: "GOOD" ), appearance: Appearance(gender: "Male", race: "White", height: ["6'10"], weight: ["200"], eyeColor: "balck", hairColor: "Blonde"), work: heroWork(occupation: "-", base: "CA"), connections: Connection(groupAffiliation: "Group", relatives: "relatives"), powerstats: Powerstats(intelligence: "1", strength: "1", speed: "1", durability: "1", power: "1", combat: "1"))]
 
-struct HeroDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        HeroDetailsView(eachHero: dumbHero.first!)
-    }
-}
+//struct HeroDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HeroDetailsView(eachHero: dumbHero.first!, isLoading: false)
+//    }
+//}

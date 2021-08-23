@@ -17,7 +17,7 @@ struct Home: View {
                 ShowSuperhero()
             }
             .tabItem {
-                Image(systemName: "airplane.circle.fill")
+                Image(systemName: "house.circle.fill")
                 Text("Home")
             }
             NavigationView {

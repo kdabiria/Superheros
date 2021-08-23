@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ZodiacInfo: View {
     @Binding var info: zodiacHeros
+    @Environment(\.presentationMode) var present
     var body: some View {
         ZStack {
 //            Image("background")
@@ -19,9 +20,25 @@ struct ZodiacInfo: View {
             LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom)
             
             ScrollView {
-
+                
                 VStack {
-                    Spacer()
+                    HStack {
+                        Button(action: {
+                            present.wrappedValue.dismiss()
+                        }, label: {
+                            Text("Done")
+//                                .font(.title)
+                                .foregroundColor(.white)
+                                .fontWeight(.light)
+    //                            .frame(width: 50)
+    //                            .background(Color.blue)
+    //                            .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+//                                .padding(.leading,20)
+                        })
+                        Spacer()
+                    }
+                    
+//                    Spacer()
                     Text("\(info.name): \(info.image)")
                         .font(.system(size: 50, weight: .regular, design: .serif))
                         .foregroundColor(.white)
@@ -52,7 +69,7 @@ struct ZodiacInfo: View {
                     Spacer()
                         
                 }
-                .padding(.top, 50)
+//                .padding(.top, 50)
                 .padding()
             }
             
