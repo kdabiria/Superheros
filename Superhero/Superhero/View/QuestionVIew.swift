@@ -10,11 +10,12 @@ import SwiftUI
 struct QuestionVIew: View {
     @Binding var question: QAContainer
     @Binding var lvl: String
+    @State var isLoading  = false
     
     @State var index:Int = 1
     
     @State var selected = ""
-    @State private var toDisable = true
+    @State private var toDisable = false
     @State private var submitDisable = false
     @State var showHero = false
     
@@ -23,6 +24,7 @@ struct QuestionVIew: View {
     @State var heroData: heroInfo = heroInfo(id: "1", name: "", image: heroImage(url: "background"), biography: heroBiography(fullName: "", alterEgos: "", placeOfBirth: "", firstAppearance: "", publisher: "", alignment: "" ), appearance: Appearance(gender: "", race: "", height: [""], weight: [""], eyeColor: "", hairColor: ""), work: heroWork(occupation: "", base: ""), connections: Connection(groupAffiliation: "", relatives: ""), powerstats: Powerstats(intelligence: "", strength: "", speed: "", durability: "", power: "", combat: ""))
     
     func getData(nameOfHero: String) {
+        isLoading = true
 //        let urlString = "https://superheroapi.com/api/5750045291732827/search/\(nameOfHero)"
         let urlString = "https://superheroapi.com/api/5750045291732827/\(nameOfHero)"
         let url = URL(string: urlString)
@@ -39,15 +41,16 @@ struct QuestionVIew: View {
                     }
                 }
             }
+            isLoading = false
         }.resume()
     }
     
     func powerSup(){
         var randomHeroArray: [String] = []
         var highestPower: [String] = []
-        
+        isLoading = true
         for _ in 1...3 {
-            var randomHero: String = allHero.randomElement()!
+            let randomHero: String = allHero.randomElement()!
 //            randomHeroArray[0] = randomHero!
             getData(nameOfHero: allHeroDict[randomHero]!)
             highestPower.append(heroData.powerstats.power)
@@ -74,50 +77,61 @@ struct QuestionVIew: View {
     
     var body: some View {
         if showHero {
-            if lvl == "1" {
-                VStack(spacing: 20) {
-                    Text("You are \(heroData.name)")
-                        .font(.title2)
-                    if heroData.powerstats.power != "null" {
-                        Text("Power: \(heroData.powerstats.power)")
-                            .font(.title2)
-                    }
-                    else {
-                        Text("Power: -")
-                            .font(.title2)
-                    }
-                    
+            if isLoading {
+                VStack {
                     Spacer()
-                    
-                    Image(systemName: "eye.slash")
-                        .data(url: URL(string: heroData.image.url)!)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 300)
-                        .cornerRadius(12)
-                    
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                        .scaleEffect(3)
                     Spacer()
-                    
-//                    Button(action: {
-//                        present.wrappedValue.dismiss()
-//                    }, label: {
-//                        Text("Quiz")
-//                            .fontWeight(.heavy)
-//                            .foregroundColor(Color("text"))
-//                            .padding(.vertical)
-//                            .frame(width: 100)
-//                            .background(Color.blue)
-//                            .cornerRadius(25)
-//
-//                    })
-//                    .padding(.bottom, 20)
-                    
                 }
-                .padding()
             }
             else {
-                VStack {
-                    Text("no logic yet")
+                if lvl == "1" {
+                    VStack(spacing: 20) {
+                        Text("You are \(heroData.name)")
+                            .font(.title2)
+                        if heroData.powerstats.power != "null" {
+                            Text("Power: \(heroData.powerstats.power)")
+                                .font(.title2)
+                        }
+                        else {
+                            Text("Power: -")
+                                .font(.title2)
+                        }
+                        
+                        Spacer()
+                        
+                        Image(systemName: "eye.slash")
+                            .data(url: URL(string: heroData.image.url)!)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 300)
+                            .cornerRadius(12)
+                        
+                        Spacer()
+                        
+    //                    Button(action: {
+    //                        present.wrappedValue.dismiss()
+    //                    }, label: {
+    //                        Text("Quiz")
+    //                            .fontWeight(.heavy)
+    //                            .foregroundColor(Color("text"))
+    //                            .padding(.vertical)
+    //                            .frame(width: 100)
+    //                            .background(Color.blue)
+    //                            .cornerRadius(25)
+    //
+    //                    })
+    //                    .padding(.bottom, 20)
+                        
+                    }
+                    .padding()
+                }
+                else {
+                    VStack {
+                        Text("no logic yet")
+                    }
                 }
             }
         }
