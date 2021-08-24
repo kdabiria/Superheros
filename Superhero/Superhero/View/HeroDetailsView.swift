@@ -136,8 +136,7 @@ struct heroList: View {
 //                        }
 //                        .padding()
                     }
-                    .frame(maxWidth: 450, maxHeight: .infinity)
-//                        .frame(minWidth:250)
+                    .frame(minWidth: 350, maxWidth: 350, maxHeight: .infinity)
                     .padding()
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
@@ -191,7 +190,7 @@ struct heroList: View {
                             .lineLimit(nil)
                             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     }
-                    .frame(maxWidth: 450, maxHeight: .infinity)
+                    .frame(minWidth: 350, maxWidth: 350, maxHeight: .infinity)
                     .padding(.bottom)
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
@@ -209,7 +208,7 @@ struct heroList: View {
                             .lineLimit(nil)
                             .multilineTextAlignment(.center)
                     }
-                    .frame(maxWidth: 450, maxHeight: .infinity)
+                    .frame(minWidth: 350, maxWidth: 350, maxHeight: .infinity)
                     .padding(.bottom)
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
@@ -227,7 +226,7 @@ struct heroList: View {
                             .lineLimit(nil)
                             .multilineTextAlignment(.center)
                     }
-                    .frame(maxWidth: 450, maxHeight: .infinity)
+                    .frame(minWidth: 350, maxWidth: 350, maxHeight: .infinity)
                     .padding(.bottom)
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
@@ -247,7 +246,7 @@ struct heroList: View {
                             .lineLimit(nil)
                             .multilineTextAlignment(.center)
                     }
-                    .frame(maxWidth: 450, maxHeight: .infinity)
+                    .frame(minWidth: 350, maxWidth: 350, maxHeight: .infinity)
                     .padding(.bottom)
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
@@ -266,10 +265,11 @@ struct heroList: View {
                         Text("\(eachHero.connections.groupAffiliation)")
                             .font(.title3)
                             .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
                             .multilineTextAlignment(.center)
 
                     }
-                    .frame(maxWidth: 450, maxHeight: .infinity)
+                    .frame(minWidth: 350, maxWidth: 350, maxHeight: .infinity)
                     .padding(.bottom)
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
@@ -286,9 +286,10 @@ struct heroList: View {
                         Text("\(eachHero.connections.relatives)")
                             .font(.title3)
                             .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
                             .multilineTextAlignment(.center)
                     }
-                    .frame(maxWidth: 450, maxHeight: .infinity)
+                    .frame(minWidth: 350, maxWidth: 350, maxHeight: .infinity)
                     .padding(.bottom)
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
@@ -310,7 +311,7 @@ struct heroList: View {
                             .lineLimit(nil)
                             .multilineTextAlignment(.center)
                     }
-                    .frame(maxWidth: 450, maxHeight: .infinity)
+                    .frame(minWidth: 350, maxWidth: 350, maxHeight: .infinity)
                     .padding(.bottom)
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .background(
@@ -320,7 +321,6 @@ struct heroList: View {
                     )
     
                 }
-                .padding(.leading,50)
                 .padding()
             }
         }
