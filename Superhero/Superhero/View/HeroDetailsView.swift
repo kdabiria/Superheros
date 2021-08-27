@@ -56,31 +56,29 @@ struct heroList: View {
         GeometryReader { geo in
             VStack {
                 Group {
-                    //systemName: "eye.slash"
+                    
                     Image(systemName: "eye.slash")
                         .data(url: URL(string: eachHero.image.url)!)
                         .resizable()
-//                        .scaledToFit()
-//                        .frame(height: 300)
                         .aspectRatio(contentMode: .fit)
                         .cornerRadius(12)
                         .frame(width: geo.size.width)
-//                        .cornerRadius(12)
-    //                    .padding(.top, 250)
-                    Text("Superhero Name: \(eachHero.name)")
+
+                    Text("Name: \(eachHero.name)")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .multilineTextAlignment(/*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .padding(.top, 10)
                 }
-                .padding()
+
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack( spacing: 50) {
+                    HStack(spacing: 50) {
                         VStack() {
                             Text("PowersStat")
                                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                 .padding()
-    //                        HStack() {
+                            
                                 if(eachHero.powerstats.intelligence == "null") {
                                     Text("Intelligence: -")
                                         .font(.title3)
@@ -89,7 +87,7 @@ struct heroList: View {
                                     Text("Intelligence: \(eachHero.powerstats.intelligence)")
                                         .font(.title3)
                                 }
-    //                            Spacer()
+
                                 if(eachHero.powerstats.strength == "null") {
                                     Text("Intelligence: -")
                                         .font(.title3)
@@ -98,10 +96,7 @@ struct heroList: View {
                                     Text("Strength: \(eachHero.powerstats.strength)")
                                         .font(.title3)
                                 }
-    //                        }
-    //                        .padding()
-                            
-    //                        HStack {
+
                                 if(eachHero.powerstats.speed == "null") {
                                     Text("Speed: -")
                                         .font(.title3)
@@ -110,7 +105,7 @@ struct heroList: View {
                                     Text("Speed: \(eachHero.powerstats.speed)")
                                         .font(.title3)
                                 }
-    //                            Spacer()
+
                                 if(eachHero.powerstats.durability == "null") {
                                     Text("Durability: -")
                                         .font(.title3)
@@ -119,9 +114,7 @@ struct heroList: View {
                                     Text("Durability: \(eachHero.powerstats.durability)")
                                         .font(.title3)
                                 }
-    //                        }
-    //                        .padding()
-    //                        HStack {
+
                                 if(eachHero.powerstats.power == "null") {
                                     Text("Power: -")
                                         .font(.title3)
@@ -129,7 +122,7 @@ struct heroList: View {
                                     Text("Power: \(eachHero.powerstats.power)")
                                         .font(.title3)
                                 }
-    //                            Spacer()
+
                                 if(eachHero.powerstats.combat == "null") {
                                     Text("Combat: -")
                                         .font(.title3)
@@ -137,8 +130,6 @@ struct heroList: View {
                                     Text("Combat: \(eachHero.powerstats.combat)")
                                         .font(.title3)
                                 }
-    //                        }
-    //                        .padding()
                         }
 //                        .frame(minWidth: 350, maxWidth: 350, maxHeight: .infinity)
                         .frame(width: geo.size.width / 1.3, height: geo.size.height / 2.3)
@@ -333,6 +324,7 @@ struct heroList: View {
                         )
         
                     }
+                    .padding(.horizontal, 20)
                     .padding()
                 }
             }
