@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @Binding var serchText: String
+    @Binding var searchText: String
     @Binding var searching: Bool
     
     var body: some View {
@@ -17,7 +17,7 @@ struct SearchBar: View {
                 .foregroundColor(Color("SearchBar"))
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Search...", text: $serchText) {
+                TextField("Search...", text: $searchText) {
                     startedSearching in
                     if startedSearching {
                         withAnimation {
@@ -43,6 +43,6 @@ struct SearchBar: View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(serchText: .constant(""), searching: .constant(false))
+        SearchBar(searchText: .constant(""), searching: .constant(false))
     }
 }
