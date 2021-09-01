@@ -68,11 +68,6 @@ struct QuestionVIew: View {
                 }
             }
         }
-        
-//        print("array of random hero: \(randomHeroArray)")
-        
-//        return heroData
-    
     }
     
     var body: some View {
@@ -210,6 +205,9 @@ struct QuestionVIew: View {
                     .padding()
                 }
             }
+            else {
+                QuizResult(lvl: $lvl, heroData: heroData)
+            }
         }
         else {
             VStack(spacing:22) {
@@ -264,7 +262,6 @@ struct QuestionVIew: View {
                 HStack {
                     Button(action: {
                         if !selected.isEmpty {
-//                            submitDisable = true
                             index += 1
                             if index == 4{
                                 toDisable = true
@@ -292,15 +289,12 @@ struct QuestionVIew: View {
                 
             }
             .padding()
-//            .background(Color("SearchBar"))
             .cornerRadius(25)
             .background(
                 RoundedRectangle(cornerRadius: 25)
                     .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                     .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
             )
-//            .shadow(color: Color.black.opacity(0.05), radius: 5, x: 5, y: 5)
-//            .shadow(color: Color.black.opacity(0.05), radius: 5, x: -5, y: -5)
         }
     }
     
