@@ -12,7 +12,6 @@ struct HeroDetailsView: View {
     var eachHero: heroInfo
     @Binding var isLoading: Bool
     
-    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         
         ZStack {
@@ -26,22 +25,11 @@ struct HeroDetailsView: View {
                         .scaleEffect(3)
                 }
                 else {
-                    Button(action: {
-                           self.presentationMode.wrappedValue.dismiss()
-                       }) {
-                           HStack {
-                               Image(systemName: "chevron.backward")
-                                .foregroundColor(.white)
-                                .padding(.leading)
-                            Spacer()
-                           }
-                        }
                     heroList(eachHero: eachHero)
                 }
             }
            
         }
-        .navigationBarHidden(true)
     }
     
     

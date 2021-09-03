@@ -43,8 +43,7 @@ struct ShowSuperhero: View {
                 }
                 .listStyle(GroupedListStyle())
                 .navigationBarTitle("Heros")
-                .navigationBarTitleDisplayMode(.inline)
-
+                .navigationBarTitleDisplayMode(.automatic)
         }
     }
 }

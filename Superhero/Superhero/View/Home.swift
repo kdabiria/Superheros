@@ -16,6 +16,7 @@ struct Home: View {
             NavigationView {
                 ShowSuperhero()
             }
+            .accentColor(.white)
             .tabItem {
                 Image(systemName: "house.circle.fill")
                 Text("Home")
