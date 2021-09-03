@@ -79,15 +79,15 @@ struct MenuButton: View {
         default:
             switch currentItemIndex {
             case 0:
-                    return(-100, -120)
+                    return(-100, -20)
                 case 1:
-                    return(-70, -180)
+                    return(-70, -80)
                 case 2:
-                    return(0, -210)
+                    return(0, -110)
                 case 3:
-                    return(70, -180)
+                    return(70, -80)
                 default:
-                    return(100, -120)
+                    return(100, -20)
             }
         }
     }
@@ -104,7 +104,7 @@ struct SelectedMenuButton: View {
             .shadow(radius: 5)
             .overlay(Image(systemName: menuItem.icon))
             .foregroundColor(.white)
-            .offset(x: 0, y: isActivated ? -90 : -10)
+            .offset(x: 0, y: isActivated ? -20 : -10)
             .onTapGesture {
                 self.isActivated.toggle()
             }

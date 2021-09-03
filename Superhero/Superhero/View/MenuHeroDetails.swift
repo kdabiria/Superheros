@@ -72,14 +72,15 @@ struct MenuHeroDetails: View {
                         }
                 }
                 .frame(minWidth: UIScreen.main.bounds.width - 100 , maxWidth: UIScreen.main.bounds.width - 100, minHeight: UIScreen.main.bounds.height / 3 , maxHeight: UIScreen.main.bounds.height / 3)
-                .padding()
+                .padding(.bottom)
                 .clipShape(RoundedRectangle(cornerRadius: 25))
                 .background(
                     RoundedRectangle(cornerRadius: 25)
                         .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                         .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                 )
-                .offset(x: 0, y: 100)
+                .offset(x: 0, y: 50)
+                .padding(.top, 25)
                 
             }
             else if num == "1" {
@@ -151,7 +152,8 @@ struct MenuHeroDetails: View {
                         .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                         .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                 )
-                .offset(x: 0, y: 100)
+                .offset(x: 0, y: 50)
+                .padding(.top, 25)
             }
             else if num == "2" {
                 VStack {
@@ -185,7 +187,8 @@ struct MenuHeroDetails: View {
                         .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                         .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                 )
-                .offset(x: 0, y: 100)
+                .offset(x: 0, y: 50)
+                .padding(.top, 25)
             }
             else if num == "3" {
                 VStack {
@@ -221,7 +224,8 @@ struct MenuHeroDetails: View {
                         .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                         .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                 )
-                .offset(x: 0, y: 100)
+                .offset(x: 0, y: 50)
+                .padding(.top, 25)
             }
             
             else if num == "4" {
@@ -260,7 +264,8 @@ struct MenuHeroDetails: View {
                         .fill(LinearGradient(gradient: Gradient(colors: [Color("Start"), Color("Middle"), Color("End")]), startPoint: .top, endPoint: .bottom))
                         .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                 )
-                .offset(x: 0, y: 100)
+                .offset(x: 0, y: 50)
+                .padding(.top, 25)
             }
         }
     }

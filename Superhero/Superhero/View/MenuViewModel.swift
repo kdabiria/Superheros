@@ -6,14 +6,14 @@
 //
 
 import SwiftUI
-
+//.black.opacity(0.9)
 class MenuViewModel: ObservableObject {
     @Published var menus: [MenuItem]  = [
-        MenuItem(color: .black.opacity(0.9), icon: "bolt.circle", menuView: AnyView(VStack{}), selected: true),
-        MenuItem(color: .black.opacity(0.9), icon: "info.circle", menuView: AnyView(Text("2 view")), selected: false),
-        MenuItem(color: .black.opacity(0.9), icon: "bag.circle", menuView: AnyView(Text("3 view")), selected: false),
-        MenuItem(color: .black.opacity(0.9), icon: "network", menuView: AnyView(Text("4 view")), selected: false),
-        MenuItem(color: .black.opacity(0.9), icon: "ellipsis.circle", menuView: AnyView(Text("5 view")), selected: false),
+        MenuItem(color: Color("CircularButton"), icon: "bolt.circle", menuView: AnyView(VStack{}), selected: true),
+        MenuItem(color: Color("CircularButton"), icon: "info.circle", menuView: AnyView(Text("2 view")), selected: false),
+        MenuItem(color: Color("CircularButton"), icon: "bag.circle", menuView: AnyView(Text("3 view")), selected: false),
+        MenuItem(color: Color("CircularButton"), icon: "network", menuView: AnyView(Text("4 view")), selected: false),
+        MenuItem(color: Color("CircularButton"), icon: "ellipsis.circle", menuView: AnyView(Text("5 view")), selected: false),
     ]
     
     //computed property
